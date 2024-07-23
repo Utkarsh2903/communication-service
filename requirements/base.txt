@@ -1,0 +1,9 @@
+alembic
+celery
+fastapi
+gunicorn
+newrelic
+pydantic
+redis
+sqlalchemy
+uvicorn[standard]
