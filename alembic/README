@@ -1,5 +1,1 @@
 Generic single-database configuration.
-
-1. rename the env.yml.sample file to env.yml
-2. make virtual env
-3. install the requirements in the requirements module

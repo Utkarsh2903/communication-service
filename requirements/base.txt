@@ -1,8 +1,10 @@
 alembic
 celery
 fastapi
+flower
 gunicorn
 newrelic
+psycopg2-binary
 pydantic
 redis
 sqlalchemy
