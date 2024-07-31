@@ -24,11 +24,11 @@ def upgrade() -> None:
         sa.Column('id', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('channel_type', sa.String(50), nullable=False),
-        sa.Column('content', sa.String(50)),
+        sa.Column('content', sa.Text),
         sa.Column('description', sa.String(50)),
         sa.Column('status_id', sa.Integer, nullable=False),
-        sa.Column('created_at', sa.DateTime(), nullable=False),
-        sa.Column('updated_at', sa.DateTime(), nullable=False),
+        sa.Column('created_at', sa.DateTime(), nullable=False, server_default=func.now()),
+        sa.Column('updated_at', sa.DateTime(), nullable=False, server_default=func.now(),  onupdate=func.now()),
     )
 
 

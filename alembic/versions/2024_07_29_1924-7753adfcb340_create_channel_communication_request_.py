@@ -28,8 +28,8 @@ def upgrade() -> None:
         sa.Column('response', sa.JSON, nullable=False),
         sa.Column('status_id', sa.Integer, nullable=False),
         sa.Column('delivered_at', sa.DateTime(), nullable=False),
-        sa.Column('created_at', sa.DateTime(), nullable=False),
-        sa.Column('updated_at', sa.DateTime(), nullable=False),
+        sa.Column('created_at', sa.DateTime(), nullable=False, server_default=func.now()),
+        sa.Column('updated_at', sa.DateTime(), nullable=False, server_default=func.now(),  onupdate=func.now()),
     )
 
 

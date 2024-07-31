@@ -27,10 +27,10 @@ def upgrade() -> None:
         sa.Column('sender_id', sa.Integer, sa.ForeignKey('senders.id'), nullable=False),
         sa.Column('request_params', sa.JSON, nullable=False),
         sa.Column('channel_type', sa.String(50), nullable=False),
-        sa.Column('status_id', sa.String(50), nullable=False),
-        sa.Column('callback_url', sa.String(50), nullable=False),
-        sa.Column('created_at', sa.DateTime(), nullable=False),
-        sa.Column('updated_at', sa.DateTime(), nullable=False),
+        sa.Column('status_id', sa.Integer, nullable=False),
+        sa.Column('callback_url', sa.Text, nullable=False, unique=True),
+        sa.Column('created_at', sa.DateTime(), nullable=False, server_default=func.now()),
+        sa.Column('updated_at', sa.DateTime(), nullable=False, server_default=func.now(),  onupdate=func.now()),
     )
 
 

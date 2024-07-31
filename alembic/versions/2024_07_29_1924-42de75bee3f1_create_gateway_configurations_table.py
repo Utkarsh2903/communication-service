@@ -26,9 +26,9 @@ def upgrade() -> None:
         sa.Column('account_id', sa.Integer, sa.ForeignKey('accounts.id'), nullable=False),
         sa.Column('gateway_id', sa.Integer, sa.ForeignKey('gateways.id'), nullable=False),
         sa.Column('configuration_details', sa.JSON, nullable=False),
-        sa.Column('status_id', sa.JSON, nullable=False),
-        sa.Column('created_at', sa.DateTime(), nullable=False),
-        sa.Column('updated_at', sa.DateTime(), nullable=False),
+        sa.Column('status_id', sa.Integer, nullable=False),
+        sa.Column('created_at', sa.DateTime(), nullable=False, server_default=func.now()),
+        sa.Column('updated_at', sa.DateTime(), nullable=False, server_default=func.now(),  onupdate=func.now()),
     )
 
 
