@@ -24,7 +24,7 @@ def upgrade() -> None:
         sa.Column('id', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('sub_tenant_id', sa.Integer, nullable=False),
-        sa.Column('api_key', sa.String(50), nullable=False),
+        sa.Column('api_key', sa.Text, nullable=False, unique=True),
         sa.Column('status_id', sa.Integer, nullable=False),
         sa.Column('created_at', sa.DateTime(), nullable=False, server_default=func.now()),
         sa.Column('updated_at', sa.DateTime(), nullable=False, server_default=func.now(),  onupdate=func.now()),
