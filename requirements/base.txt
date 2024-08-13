@@ -1,5 +1,6 @@
 alembic
 celery
+cryptography
 fastapi
 flower
 gunicorn

@@ -8,6 +8,11 @@ from sqlalchemy import pool
 from alembic import context
 from config.app_config import DB_URL
 from config.database import Base
+from src.models.account import Account
+from src.models.gateway import Gateway
+from src.models.gateway_configuration import GatewayConfiguration
+from src.models.sender import Sender
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
